@@ -25,11 +25,13 @@ if (scrollTop)
                     plashka.classList.add('hide');
                     plashka.style.height = '0px';
                     plashka.style.opacity = '0';
+                    plashka.style.overflow = 'hidden';
 
                     if(window.innerWidth > 1150) {
                         headerTop.classList.add('hide');
                         headerTop.style.height = '0px';
                         headerTop.style.opacity = '0';
+                        headerTop.style.overflow = 'hidden';
                     }
                 }
             }
@@ -37,10 +39,12 @@ if (scrollTop)
                 plashka.style.height = originalHeightPlashka + 'px';
                 plashka.classList.remove('hide');
                 plashka.style.opacity = '1';
+                plashka.style.overflow = 'auto';
 
                 headerTop.style.height = originalHeightHeaderTop + 'px';
                 headerTop.classList.remove('hide');
                 headerTop.style.opacity = '1';
+                headerTop.style.overflow = 'auto';
             }
         };
     })
@@ -981,5 +985,24 @@ document.addEventListener("DOMContentLoaded", function () {
             headerMobileSearchContent.classList.toggle('active');
         })
     }
+
+
+
+    /* search in page */
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const searchValue = this.value.toLowerCase();
+        const rows = document.querySelectorAll('.search-page-item'); 
+    
+        rows.forEach(function (row) {
+            const serviceName = row.querySelector('.search-page-name').textContent.toLowerCase();
+    
+            if (serviceName.includes(searchValue)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        quantityElem();
+    });
 
 })

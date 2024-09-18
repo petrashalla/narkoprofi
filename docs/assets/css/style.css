@@ -2488,7 +2488,7 @@ main.shifted {
         width: 90%;
         border-radius: 10px 0 0 10px;
         z-index: 10;
-        height: 90vh !important;
+        height: 99vh !important;
         overflow-y: auto;
         padding-top: 10px;
         background-color: #fff;
@@ -2717,6 +2717,7 @@ main.shifted {
     .header__service_submenu-3 .header__submenu_tab-btns button {
         font-size: 14px;
         padding: 12px;
+        width: 100%;
     }
 
     .header__service_submenu-3 .header__submenu_tab-content {
@@ -2724,6 +2725,9 @@ main.shifted {
         margin-top: 22px;
         border-radius: 10px;
         padding: 16px;
+        -webkit-box-ordinal-group: 1;
+            -ms-flex-order: 0;
+                order: 0;
     }
 
     .header__service_submenu-3 .header__submenu_tab-content ul {
